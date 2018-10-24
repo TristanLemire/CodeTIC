@@ -57,7 +57,7 @@ table {
     src: url("../fonts/SinaNov.otf") format("truetype");
 } 
 
-
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 header {
     display: inline-flex;
@@ -73,7 +73,7 @@ header h1 a{
     width: 200px;
     line-height: 75px;
     font-size: 35px;
-    font-family: "Gotham";
+    font-family: 'Oswald', sans-serif;
     margin-left:30px;
     color: rgb(242, 242, 242);
     background: linear-gradient(to right, #C9D6FF 0%, #E2E2E2 75%);
