@@ -242,7 +242,7 @@ header h1 a{
     margin-left:63px;
 }
 
-@media (min-width: 300px) {
+@media (max-width: 347px) {
     .home-pres {
         height: auto;
         max-height: 87vh;
