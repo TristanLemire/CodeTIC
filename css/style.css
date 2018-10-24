@@ -246,6 +246,9 @@ header h1 a{
     .home-pres {
         padding-top: 50px; 
         position: static;
+        top:0%;
+        left:0%;
+        transform: translate(0%, 0%);
     }
 }
 
