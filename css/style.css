@@ -242,6 +242,16 @@ header h1 a{
     margin-left:63px;
 }
 
+@media (min-width: 320px) {
+    .home-pres {
+        height: auto;
+        max-height: 87vh;
+        text-align: center;
+        padding: 20px;
+        padding-top:45px; 
+    }
+}
+
 .home-pres {
     height: auto;
     max-height: 87vh;
