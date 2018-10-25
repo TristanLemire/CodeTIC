@@ -13,20 +13,15 @@
     <title>CodeTIC</title>
 </head>
 <body>
-        <header>
-            <h1><a href="index.html" class="titre">Cod&lt;-&gt;ETIC</a></h1>
-            <a href="https://www.google.fr" class="off"><i class="fas fa-power-off"></i></a>
-        </header>
+            <?php include "header.html"; ?>
             <ul class="s">
-                <li><a href="html5.html" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
-                <li><a href="css3.html" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
-                <li><a href="js.html" class="js-bouton"><i class="fab fa-js-square"></i></a></li>
-                <li><a href="php5.html" class="php5-bouton"><i class="fab fa-php"></i></a></li>
-                <li><a href="mysql.html" class="mysql-bouton"><i class="icon-mysql-alt"></i></a></li>
+                <li><a href="html5.php" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
+                <li><a href="css3.php" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
+                <li><a href="js.php" class="js-bouton"><i class="fab fa-js-square"></i></a></li>
+                <li><a href="php5.php" class="php5-bouton"><i class="fab fa-php"></i></a></li>
+                <li><a href="mysql.php" class="mysql-bouton"><i class="icon-mysql-alt"></i></a></li>
             </ul>
-        <footer>
-                <p>Développé par <a href="http://www.tristanlemire.com/">Tristan Lemire</a></p>
-        </footer>
+
     <section class="main-content">
         <div class="home-pres">
             <h2>Bienvenue sur CodeTic</h2>
@@ -38,7 +33,6 @@
                 option SLAM qui m'a permis d'apprendre les bases du développement web. Je viens de rejoindre HETIC pour un bachelor
                  web en 3 ans et je suis actuellement à la recherche d'un contrat de professionnalisation.</p>  
         </div>
-       
     </section>
 
 </body>

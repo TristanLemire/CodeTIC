@@ -13,20 +13,30 @@
     <title>CodeTIC</title>
 </head>
 <body>
-        <header>
-            <h1><a href="index.html" class="titre">Cod&lt;-&gt;ETIC</a></h1>
-            <a href="https://www.google.fr" class="off"><i class="fas fa-power-off"></i></a>
-        </header>
+    <?php
+       /* try{
+            // Connexion a la base de donnée MySQL.
+	        $bdd = new PDO('mysql:host=localhost;dbname=codetic;charset=utf8', 'root', '1Hy@pr3r'); 
+        }
+            // Si erreur, affiche un message et on arrête tout
+            catch (Exception $e){
+            die('Erreur : ' . $e->getMessage());
+        }
+        $reponse = $bdd->query('SELECT L.name_langage, P.* from Langage L inner join Post P on L.id_langage = P.id_langega where L.id_langage = 5;');
+
+        $donnees = $reponse->fetch();
+
+        // Je termine le traitement de la requête
+        $reponse->closeCursor(); */
+    ?>
+        <?php include "header.html"; ?>
             <ul class="s">
-                <li><a href="html5.html" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
-                <li><a href="css3.html" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
-                <li><a href="js.html" class="js-bouton"><i class="fab fa-js-square"></i></a></li>
-                <li><a href="php5.html" class="php5-bouton"><i class="fab fa-php"></i></a></li>
-                <li><a href="mysql.html" class="mysql-bouton2"><i class="icon-mysql-alt"></i></a></li>
+                <li><a href="html5.php" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
+                <li><a href="css3.php" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
+                <li><a href="js.php" class="js-bouton"><i class="fab fa-js-square"></i></a></li>
+                <li><a href="php5.php" class="php5-bouton"><i class="fab fa-php"></i></a></li>
+                <li><a href="mysql.php" class="mysql-bouton2"><i class="icon-mysql-alt"></i></a></li>
             </ul>
-        <footer>
-                <p>Développé par <a href="http://www.tristanlemire.com/">Tristan Lemire</a></p>
-        </footer>
     <section class="main-content">
             <div class="html-content">
                     <h2>MYSQL</h2>
