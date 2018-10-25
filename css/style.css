@@ -342,7 +342,7 @@ footer a:hover{
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px; 
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3) inset;
 }
 
 .content-of h3 {
