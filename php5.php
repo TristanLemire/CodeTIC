@@ -16,7 +16,7 @@
     <?php
        /* try{
             // Connexion a la base de donnée MySQL.
-	        $bdd = new PDO('mysql:host=localhost;dbname=codetic;charset=utf8', 'root', '1Hy@pr3r'); 
+	        $bdd = new PDO('mysql:host=localhost;dbname=codetic;charset=utf8', 'root', ''); 
         }
             // Si erreur, affiche un message et on arrête tout
             catch (Exception $e){
