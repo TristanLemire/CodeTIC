@@ -13,27 +13,23 @@
     <title>CodeTIC</title>
 </head>
 <body>
-            <?php include "header.html"; ?>
-            <ul class="s">
-                <li><a href="html5.php" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
-                <li><a href="css3.php" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
-                <li><a href="js.php" class="js-bouton"><i class="fab fa-js-square"></i></a></li>
-                <li><a href="php5.php" class="php5-bouton"><i class="fab fa-php"></i></a></li>
-                <li><a href="mysql.php" class="mysql-bouton"><i class="icon-mysql-alt"></i></a></li>
-            </ul>
-
-    <section class="main-content">
-        <div class="home-pres">
-            <h2>Bienvenue sur CodeTic</h2>
-            <p>CodeTic est un site conçu par Tristan Lemire. Il a pour but des références les langages, 
-                les outils, les fonctions et les paramètres appris lors de son bachelor web à HÉTIC.
-            </p>
-            <h3>A propos de Tristan Lemire</h3>
-            <p>Bonjour ! Je suis développeur web sur Paris. Je viens d'avoir mon BTS SIO (Service Informatique aux Organisations) 
-                option SLAM qui m'a permis d'apprendre les bases du développement web. Je viens de rejoindre HETIC pour un bachelor
-                 web en 3 ans et je suis actuellement à la recherche d'un contrat de professionnalisation.</p>  
-        </div>
+    <?php include "header2.html"; ?>
+    <section class="main-content2">
+        <div id="particles-js">
+            <form action="connect.php" method="POST" class="connexion">
+                <h2>Connexion</h2>
+                <label class="connexion-label">E-mail :</label><br>
+                <input type="email" name="mail"/><br>
+                <label>Mot de passe :</label><br>
+                <input type="password" name="mdp"/><br>
+                <input type="submit" class="submit"/>
+                <a href="inscription.php">inscription</a>
+            </form>
+        </div>  
     </section>
+    <!-- scripts -->
+  <script src="../particles.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>

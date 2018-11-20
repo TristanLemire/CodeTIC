@@ -14,82 +14,62 @@
 </head>
 <body>
     <?php
-       /* try{
-            // Connexion a la base de donnée MySQL.
-	        $bdd = new PDO('mysql:host=localhost;dbname=codetic;charset=utf8', 'root', ''); 
+        include "header.html";
+        session_start();
+        try
+        {
+            $PDO = new PDO('mysql:host=localhost;dbname=codetic;charset=utf8', 'root', 'root');
         }
-            // Si erreur, affiche un message et on arrête tout
-            catch (Exception $e){
-            die('Erreur : ' . $e->getMessage());
+        catch(Exception $e)
+        {
+            die('Erreur : '.$e->getMessage());
         }
-        $reponse = $bdd->query('SELECT L.name_langage, P.* from Langage L inner join Post P on L.id_langage = P.id_langega where L.id_langage = 3;');
+        $stmt = $PDO->prepare("SELECT * FROM post WHERE id_user = :userid and langage_post = :langage;" );
+        $stmt->execute(['userid' => $_SESSION['id'], 'langage' => 'JS']);
+        $post = $stmt->fetchAll();
 
-        $donnees = $reponse->fetch();
-
-        // Je termine le traitement de la requête
-        $reponse->closeCursor(); */
     ?>
-    <?php include "header.html"; ?>
     <ul class="s">
         <li><a href="html5.php" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
         <li><a href="css3.php" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
         <li><a href="js.php" class="js-bouton2"><i class="fab fa-js-square"></i></a></li>
         <li><a href="php5.php" class="php5-bouton"><i class="fab fa-php"></i></a></li>
         <li><a href="mysql.php" class="mysql-bouton"><i class="icon-mysql-alt"></i></a></li>
+        <li><a href="new_post.php" class="add-bouton"><i class="fas fa-plus"></i></a></li>
     </ul>
-    <section class="main-content">
-            <div class="html-content">
-                    <h2>JS</h2>
-                    <div class="content-of">
-                        <h3>div</h3>
-                        <p class="p-of">
-                            La balise <em>&lt;div&gt;</em> définit une division ou une section, appelé aussi calque, dans un document HTML.
-                            La balise <em>&lt;div&gt;</em> est utilisée pour regrouper des éléments sous forme de bloc et ainsi pouvoir les formater en CSS.
-                            Remarque : Les navigateurs placent toujours un saut de ligne avant et après un élément <em>&lt;div&gt;</em>
-                        </p>
-                        <h4><em>Exemple de balise &lt;div&gt; en HTML5</em></h4>
-                        <p class="code-of">&lt;div id="calque"&gt;<br>
-                                &lt;h3>Titre ou en-tête&lt;/h3&gt;<br>
-                                &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;<br>
-                            &lt;div/&gt;
-                        </p>
-                        <br>
-                    </div>
-        
-                    <div class="content-of">
-                            <h3>div</h3>
-                            <p class="p-of">
-                                La balise <em>&lt;div&gt;</em> définit une division ou une section, appelé aussi calque, dans un document HTML.
-                                La balise <em>&lt;div&gt;</em> est utilisée pour regrouper des éléments sous forme de bloc et ainsi pouvoir les formater en CSS.
-                                Remarque : Les navigateurs placent toujours un saut de ligne avant et après un élément <em>&lt;div&gt;</em>
-                            </p>
-                            <h4><em>Exemple de balise &lt;div&gt; en HTML5</em></h4>
-                            <p class="code-of">&lt;div id="calque"&gt;<br>
-                                    &lt;h3>Titre ou en-tête&lt;/h3&gt;<br>
-                                    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;<br>
-                                &lt;div/&gt;
-                            </p>
-                            <br>
-                        </div>
-        
-                        <div class="content-of">
-                                <h3>div</h3>
-                                <p class="p-of">
-                                    La balise <em>&lt;div&gt;</em> définit une division ou une section, appelé aussi calque, dans un document HTML.
-                                    La balise <em>&lt;div&gt;</em> est utilisée pour regrouper des éléments sous forme de bloc et ainsi pouvoir les formater en CSS.
-                                    Remarque : Les navigateurs placent toujours un saut de ligne avant et après un élément <em>&lt;div&gt;</em>
-                                </p>
-                                <h4><em>Exemple de balise &lt;div&gt; en HTML5</em></h4>
-                                <p class="code-of">&lt;div id="calque"&gt;<br>
-                                        &lt;h3>Titre ou en-tête&lt;/h3&gt;<br>
-                                        &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;<br>
-                                    &lt;div/&gt;
-                                </p>
-                                <br>
-                            </div>
-                </div>
-       
-    </section>
 
+    <section class="main-content">
+        <div class="html-content">
+            <h2>JS</h2>
+            <?php
+            if ($post == []){
+                ?>
+                <h2><a href="new_post.php" class="createpostbouton">Creé un post</a></h2>
+                <?php
+            }
+            for ($count = 0; $count < sizeof($post); $count++) {
+                ?>
+                <div class="content-of">
+                    <h3><?php echo $post[$count]['name_post'];  ?></h3>
+                    <p class="p-of">
+                        <?php echo $post[$count]['describe_post'];  ?>
+                    </p>
+                    <h4><em>Exemple de balise <?php echo $post[$count]['name_post'];  ?> en HTML5</em></h4>
+                    <p class="code-of">
+                        <a href="<?php echo $post[$count]['lien_post']; ?>"><?php echo $post[$count]['lien_post']; ?></a>
+                    </p>
+                    <br>
+                </div>
+            <?php } ?>
+        </div>
+    </section>
+    <ul class="s2">
+        <li><a href="html5.php" class="html5-bouton"><i class="fab fa-html5"></i></a></li>
+        <li><a href="css3.php" class="css3-bouton"><i class="fab fa-css3-alt"></i></a></li>
+        <li><a href="js.php" class="js-bouton2"><i class="fab fa-js-square"></i></a></li>
+        <li><a href="php5.php" class="php5-bouton"><i class="fab fa-php"></i></a></li>
+        <li><a href="mysql.php" class="mysql-bouton"><i class="icon-mysql-alt"></i></a></li>
+        <li><a href="new_post.php" class="add-bouton"><i class="fas fa-plus"></i></a></li>
+    </ul>
 </body>
 </html>
